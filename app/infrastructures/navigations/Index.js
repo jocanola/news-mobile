@@ -1,4 +1,4 @@
-
+import { NavigationContainer } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
 // import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -14,7 +14,7 @@ export default function Index() {
   const Stack = createStackNavigator();
 
   return (
-    
+    <NavigationContainer>
       <Stack.Navigator>
        
         <Stack.Screen
@@ -36,5 +36,6 @@ export default function Index() {
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
-    );
+    </NavigationContainer>
+  );
 }

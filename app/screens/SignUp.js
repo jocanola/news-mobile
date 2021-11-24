@@ -22,7 +22,7 @@ export const RegisterScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [repeatedPassword, setRepeatedPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [enable, setEnable] = useState(true);
 
   const db = SQLite.openDatabase("db.testDB");
   useEffect(() => {
@@ -60,9 +60,14 @@ export const RegisterScreen = ({ navigation }) => {
 
 
 
-  const enableButton = password === repeatedPassword;
+  const enableButton = (
+  email === '' ? 1 : // if 
+  password === '' ? 2 : // else if 
+  password === repeatedPassword ? false : // else if
+  true // else 
+)
 
- 
+
 
   return (
     <SaveArea>

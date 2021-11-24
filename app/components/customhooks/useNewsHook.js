@@ -1,6 +1,6 @@
-import axios from "axios";
+
 import React, { useState, useEffect } from "react";
-import { Button } from "react-native-paper";
+
 export default function useNews() {
   const [posts, setPosts] = useState([]);
   const [initialPosts, setInitialPosts] =useState(10);
@@ -35,7 +35,7 @@ export default function useNews() {
     getTopStories();
   }, []);
   const fetchMoreData = () =>{
-     setInitialPosts((previous) => previous + 5)
+     setInitialPosts((previous) => previous + 10)
      getTopStories();
     };
   return [posts, loading, fetchMoreData];
